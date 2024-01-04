@@ -14,6 +14,7 @@ type
 
   TMainForm = class(TForm)
     ImageList1: TImageList;
+    MenuItem5: TMenuItem;
     ServerStatus: TImageList;
     ListView1: TListView;
     MenuItem1: TMenuItem;
@@ -43,6 +44,8 @@ type
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
@@ -70,8 +73,10 @@ implementation
 
 uses
   ConfigFormUnit,
+  AboutFormUnit,
   fphttpclient,
-  opensslsockets;
+  opensslsockets,
+  lclintf;
 
 {$R *.lfm}
 
@@ -254,6 +259,23 @@ end;
 procedure TMainForm.MenuItem3Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TMainForm.MenuItem4Click(Sender: TObject);
+begin
+  OpenURL('https://github.com/igniz-/ServerCheck/issues');
+end;
+
+procedure TMainForm.MenuItem5Click(Sender: TObject);
+var aboutForm: TAboutForm;
+begin
+  aboutForm := nil;
+  try
+    aboutForm := TAboutForm.Create(nil);
+    aboutForm.ShowModal;
+  finally
+    FreeAndNil(aboutForm);
+  end;
 end;
 
 procedure TMainForm.Timer1Timer(Sender: TObject);

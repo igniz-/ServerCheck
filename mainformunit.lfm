@@ -393,8 +393,13 @@ object MainForm: TMainForm
     object Separator1: TMenuItem
       Caption = '-'
     end
+    object MenuItem5: TMenuItem
+      Caption = 'About...'
+      OnClick = MenuItem5Click
+    end
     object MenuItem4: TMenuItem
       Caption = 'Report issue'
+      OnClick = MenuItem4Click
     end
     object Separator2: TMenuItem
       Caption = '-'
