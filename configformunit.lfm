@@ -1,0 +1,111 @@
+object ConfigForm: TConfigForm
+  Left = 1141
+  Height = 300
+  Top = 367
+  Width = 217
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsToolWindow
+  Caption = 'Configuration'
+  ClientHeight = 300
+  ClientWidth = 217
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Label1: TLabel
+    Left = 8
+    Height = 20
+    Top = 8
+    Width = 127
+    Caption = 'Check servers every'
+    ParentColor = False
+  end
+  object minsInterval: TSpinEditEx
+    Left = 8
+    Height = 28
+    Top = 32
+    Width = 129
+    MaxLength = 0
+    NumbersOnly = True
+    TabOrder = 0
+    MaxValue = 999999999999999999
+    MinValue = 1
+    MinRepeatValue = 5
+    NullValue = 0
+    Value = 1
+  end
+  object Label2: TLabel
+    Left = 146
+    Height = 20
+    Top = 34
+    Width = 52
+    Caption = 'minutes'
+    ParentColor = False
+  end
+  object alertOnFail: TCheckBox
+    Left = 8
+    Height = 24
+    Top = 80
+    Width = 145
+    Caption = 'Alert on server fail'
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 20
+    Top = 120
+    Width = 108
+    Caption = 'Tray Icon Theme'
+    ParentColor = False
+  end
+  object iconTheme: TComboBox
+    Left = 8
+    Height = 28
+    Top = 144
+    Width = 196
+    AutoDropDown = True
+    ItemHeight = 20
+    Items.Strings = (
+      'Auto'
+      'Light'
+      'Dark'
+    )
+    Style = csDropDownList
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 112
+    Height = 31
+    Top = 265
+    Width = 94
+    Anchors = [akRight, akBottom]
+    Caption = 'Save'
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 20
+    Top = 184
+    Width = 95
+    Caption = 'Check Method'
+    ParentColor = False
+  end
+  object checkMethod: TComboBox
+    Left = 8
+    Height = 28
+    Top = 208
+    Width = 196
+    AutoDropDown = True
+    ItemHeight = 20
+    Items.Strings = (
+      'HEAD'
+      'GET'
+      'POST'
+    )
+    Style = csDropDownList
+    TabOrder = 4
+  end
+end
